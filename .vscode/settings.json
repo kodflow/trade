@@ -1,0 +1,7 @@
+{
+	"files.exclude": {
+		".github": false,
+		"**/vendor": true,
+		"**/node_modules": true
+	}
+}

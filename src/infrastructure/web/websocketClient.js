@@ -2,7 +2,7 @@ const WebSocket = require('ws');
 const { websocketUrl } = require('../config');
 const StockDataService = require('../../application/services/stockDataService');
 
-function startWebSocketClient(symbols, onMessageCallback) {
+function startWebSocketClient(symbols) {
     const ws = new WebSocket(websocketUrl);
 
     ws.on('open', () => {
@@ -13,7 +13,6 @@ function startWebSocketClient(symbols, onMessageCallback) {
 
     ws.on('message', (data) => {
         const message = JSON.parse(data);
-        onMessageCallback(message);
         if (message.type === 'trade') {
             const stockDataService = new StockDataService();
             message.data.forEach(async (trade) => {

@@ -9,7 +9,7 @@ class StockRepository {
         return stocks.get(symbol);
     }
 
-    save(trade) {
+    save(symbol,trade) {
         stocks.set(symbol, trade);
     }
 }

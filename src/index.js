@@ -11,7 +11,5 @@ const symbols = ['AAPL'];
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
-    startWebSocketClient(symbols, (message) => {
-       console.log('Received message:', message);
-    });
+    startWebSocketClient(symbols);
 });
